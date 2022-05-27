@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №4</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Бикова Валентина КН-31</ion-title>
+  </ion-toolbar>
+  
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+      <ion-title>Лабораторні роботи</ion-title>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-title seze="large">Завдання</ion-title>
+      <p>Скласти програму з абстрактним батьківським класом і двома обєктами - нащадками.
+        Реалізувати циклічне виведення парамерів обʼєктів, використовуючи поліморфний контейнер -
+        масив обʼєктів базового класу (кількість обєктів>=5).</p>
+        <p>Завдання 1. Батьківський клас - багаточлен. Нащадки - квадратний, кубічний</p>
+        <p>Завдання 2. Організувати знаходження найбільшого значення багаточлену.</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input type="number" value="5" #Inputn></ion-input>
+      <ion-button (click)="ras(Inputn.value)">Розрахунок</ion-button>
+      <p *ngFor="let pol of polynomial" [ngStyle]="{color:getColor(pol.x)}">{{pol.show()}}></p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

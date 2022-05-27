@@ -1,17 +1,47 @@
+@import "../app.component.scss"
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Лабораторна робота №1
     </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    Бикова Валентина КН-31
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header collapse="condense">
+      <ion-card-toolbar>
+        <ion-title size="large">Завдання 1</ion-title>
+      </ion-card-toolbar>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Задано три числа. Знайти суму кубів тих, які кратні 7.</p>
+      <ion-item>
+        <ion-label position="floating">Перше число</ion-label>
+        <ion-input type="number" id="a" #Inputa></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Друге число</ion-label>
+        <ion-input type="number" id="b" #Inputb></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Третє число</ion-label>
+        <ion-input type="number" id="c" #Inputc></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="ras(Inputa.value,Inputb.value,Inputc.value)">Розрахунок</ion-button>
+      <ion-item>
+        <p>Результат {{d}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
