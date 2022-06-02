@@ -29,6 +29,10 @@ const routes: Routes = [
   {
     path: 'service',
     loadChildren: () => import('./service/service.module').then( m => m.ServicePageModule)
+  },
+  {
+    path: 'zalic',
+    loadChildren: () => import('./zalic/zalic.module').then( m => m.ZalicPageModule)
   }
 ];
 @NgModule({

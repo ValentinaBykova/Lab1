@@ -1,0 +1,40 @@
+<app-my-header name="Залікова робота"></app-my-header>
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-card-header>
+            <ion-title size="large">Завдання</ion-title>
+            <p><h4>Варінат</h4></p>
+            <p>Розробити сервіс для обчислення багаточлену в заданій точці за списком коефіцієнтів. Так, список (1,2,3)
+              відповідає багаточлену Р(х)=1х^2+2х+3.
+            </p>
+            <p>Форма для введення повинна спочатку запитати кількість коефіцієнтів, після чого сформувати відповідну кількість 
+              полів введення. Максимальна кількість коефіцієнтів - 5.</p>
+        </ion-card-header>
+        <ion-card-content>
+          <form [FormGroup]="ionform" (ngSubmit)="subForm()" novalidate>
+              <ion-item>
+                <ion-label>Кількість коефіцієнтів</ion-label>
+                <ion-item lines="full">
+                  <ion-label position="floating">Коефіцієнти 1-го списку:</ion-label>
+                  <ion-input formControlname="x1" type="number" required></ion-input>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="floating">Коефіцієнти 2-го списку:</ion-label>
+                  <ion-input formControlname="x2" type="number" required></ion-input>
+                </ion-item>
+                <ion-item lines="full">
+                  <ion-label position="floating">Коефіцієнти 3-го списку:</ion-label>
+                  <ion-input formControlname="x3" type="number" required></ion-input>
+                </ion-item>
+                <ion-row>
+                  <ion-col>
+                    <ion-button type="submit" expand="block">Розрахунок</ion-button>
+                    <ion-item *ngFor="let item of data">{{item}}</ion-item>
+                  </ion-col>
+                </ion-row>
+              </ion-item>
+            </div>
+          </form>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
